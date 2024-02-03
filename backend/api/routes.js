@@ -1,10 +1,12 @@
 const express = require("express")
 const app = express()
 const { MongoClient } = require("mongodb");
+require('dotenv').config()
+
 
 const router = express.Router()
-const password = "lGjM9fNo7GFbzcLd"
-const uri = `mongodb+srv://afomega123:${[password]}@cluster1.ev6sdcd.mongodb.net/?retryWrites=true&w=majority`;
+
+const uri = process.env.MONGODB_URI;
 const client = new MongoClient(uri);
 
  // for parsing application/json
