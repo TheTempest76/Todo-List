@@ -1,7 +1,7 @@
 
 async function getAllData() {
     try {
-        const response = await fetch("http://localhost:3005/api/");
+        const response = await fetch("http://localhost:3002/api/");
         const data = await response.json(); 
         return data 
     } catch (error) {
@@ -26,7 +26,7 @@ async function postJSON(data , route) {
   }
 
 async function deleteJSON(data){
-    fetch("http://localhost:3005/api/", {
+    fetch("http://localhost:3002/api/", {
         method: 'DELETE',
         headers: {
           'Content-Type': 'application/json'

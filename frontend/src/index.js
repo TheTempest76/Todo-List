@@ -10,7 +10,7 @@ addButton.addEventListener('click', function() {
         makeElements(taskText);
 
         let postText = {"task1" : taskText , "status" : "incomplete"}
-        postJSON(postText , "http://localhost:3005/api/")
+        postJSON(postText , "http://localhost:3002/api/")
     }})
 
 function makeElements(taskText , status ) {
@@ -44,10 +44,10 @@ function makeElements(taskText , status ) {
         
         if (checkbox.checked  ) {
             taskSpan.classList.add('line-through');
-            postJSON({"task1":taskSpan.textContent , "status" : "complete"},"http://localhost:3005/api/updateStatus")
+            postJSON({"task1":taskSpan.textContent , "status" : "complete"},"http://localhost:3002/api/updateStatus")
         } else {
             taskSpan.classList.remove('line-through');
-            postJSON({"task1":taskSpan.textContent , "status" : "incomplete"},"http://localhost:3005/api/updateStatus")
+            postJSON({"task1":taskSpan.textContent , "status" : "incomplete"},"http://localhost:3002/api/updateStatus")
         }
     });
     // Event listener for delete button
@@ -74,9 +74,7 @@ window.onload = async function(){
    
     const data = await getAllData()
     data.forEach(element => {
-        
-        makeElements(element.task1 , element.status)
-        
+        makeElements(element.task1 , element.status) 
     });
    
 }
