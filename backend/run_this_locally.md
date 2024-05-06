@@ -1,0 +1,2 @@
+->to run this server locally create a .env file in the /backend directory and add your mongodb uri there
+->create a db called "myDb" and create a collection called "todos"
